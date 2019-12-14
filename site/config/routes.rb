@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
-  get "/site/:page" => "site#show"
-  root "site#show", page: "home"
+  get 'home/index'
+  get 'home/supplement'
+  get 'home/diet'
+  get 'home/workout'
+  root 'home#index'
 end

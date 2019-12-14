@@ -1,0 +1,157 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
+ @import "bootstrap";
+
+ div.horizontalgap {
+   float: left;
+   overflow: hidden;
+   height: 1px;
+   width: 0px;
+ }
+
+ .carousel-item {
+   height: 75vh;
+   min-height: 350px;
+   background: no-repeat center center scroll;
+   -webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
+   background-size: cover;
+ }
+
+ .carousel {
+   margin-left: 5%;
+   margin-right: 5%;
+ }
+
+ .flex-container{
+    width: 80%;
+    min-height: 300px;
+    margin: 0 auto;
+    display: -webkit-flex; /* Safari */
+    display: flex; /* Standard syntax */
+    overflow:hidden;
+    //border-radius: .25rem;
+}
+.flex-container .column{
+    padding: 10px;
+    padding-bottom: 15%!important;
+    //background: #dbdfe5;
+    background: white;
+    -webkit-flex: 1; /* Safari */
+    -ms-flex: 1; /* IE 10 */
+    flex: 1; /* Standard syntax */
+}
+.flex-container .column.bg-alt{
+    //background: #b4bac0;
+}
+
+.card{
+  transition: .3s transform cubic-bezier(.155,1.105,.295,1.12),.3s box-shadow,.3s -webkit-transform cubic-bezier(.155,1.105,.295,1.12);
+  cursor: pointer;
+}
+
+.card:hover{
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+}
+
+ .btn.focus, .btn:focus {
+   outline: 0;
+   box-shadow: none!important;
+}
+
+ .logo {
+   width:128px;
+   height:128px;
+ }
+
+ .colorful {
+   background: #2980b9;
+   background: -webkit-linear-gradient(to top, #2c3e50, #2980b9);
+   background: linear-gradient(to top, #2c3e50, #2980b9);
+ }
+
+ /* NAVIGATION */
+ nav {
+   width: 80%;
+   margin: 0 auto;
+   padding: 50px 0;
+ }
+
+ nav ul li a {
+  display: block;
+  padding: 15px;
+  text-decoration: none;
+  color: #aaa;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin: 0 10px;
+}
+nav ul li a, nav ul li a:after, nav ul li a:before {
+  transition: all .2s;
+}
+nav ul li a:hover {
+  color: #454242;
+}
+
+#cutBtn,#wLossBtn,#wGainBtn {
+  font-weight: 650;
+  text-transform: uppercase;
+  font-size: smaller;
+  background-color: #2b5778;
+}
+
+.active {
+    background-color: #2a6f9f !important;
+}
+
+#cutBtn:hover,#wLossBtn:hover,#wGainBtn:hover {
+  background-color: #225f8a !important;
+}
+
+
+.arrow span{
+    display: block;
+    width: 30px;
+    height: 30px;
+    border-bottom: 5px solid white;
+    border-right: 5px solid white;
+    transform: rotate(45deg);
+    margin: -10px;
+    animation: animate 2s infinite;
+}
+.arrow span:nth-child(2){
+    animation-delay: -0.2s;
+}
+.arrow span:nth-child(3){
+    animation-delay: -0.4s;
+}
+@keyframes animate {
+    0%{
+        opacity: 0;
+        transform: rotate(45deg) translate(-20px,-20px);
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+        transform: rotate(45deg) translate(20px,20px);
+    }
+}

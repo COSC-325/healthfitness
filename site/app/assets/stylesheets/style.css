@@ -1,0 +1,51 @@
+.collapsible-link {
+    width: 100%;
+    position: relative;
+    text-align: left;
+}
+
+.collapsible-link::before {
+    content: '+';
+    position: absolute;
+    top: 50%;
+    right: 0.8rem;
+    transform: translateY(-50%);
+    display: block;
+    font-family: 'FontAwesome';
+    font-size: 1.1rem;
+}
+
+.collapsible-link[aria-expanded='true']::before {
+    content: '-';
+}
+
+.row {
+	padding-top: 2%;
+}
+
+.centernew {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.center {
+		padding-top: 5%;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+td {
+	text-align: center;
+}
+
+html {
+	overflow-y: auto;
+	overflow-x: hidden;
+  font-family:arial;
+}
+
+.hover:hover {
+  opacity: 0.5;
+}

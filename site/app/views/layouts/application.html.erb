@@ -1,15 +1,46 @@
-<!DOCTYPE html>
 <html>
   <head>
-    <title>Site</title>
+    <title>Health/Fitness</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <!--Importing CSS for bootstrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!--Importing scripts for bootstrap-->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
   </head>
 
-  <body>
+  <body class="colorful">
+    <nav class="navbar navbar-dark navbar-expand-md justify-content-md-center justify-content-start shadow-lg">
+        <a class="navbar-brand d-md-none d-inline" href="/"></a>
+        <button class="navbar-toggler ml-1" type="button" data-toggle="collapse" data-target="#collapsingNavbar2">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse collapse justify-content-between align-items-center w-100" id="collapsingNavbar2">
+            <ul class="navbar-nav mx-auto text-md-center text-left">
+                <li class="nav-item shift <%= 'active' if current_page?(root_path) %>">
+                    <%= link_to "Home", root_path, class: "nav-item nav-link" %>
+                </li>
+                <li class="nav-item <%= 'active' if current_page?(home_supplement_path) %>">
+                    <%= link_to "Supplement", home_supplement_path, class: "nav-item nav-link" %>
+                </li>
+                <li class="nav-item my-auto">
+                    <%= link_to image_tag('logo.png',  width: 60, height: 60), root_path, class: "nav-link navbar-brand mx-0 d-none d-md-inline logo hover" %>
+                </li>
+                <li class="nav-item <%= 'active' if current_page?(home_diet_path) %>">
+                    <%= link_to "Diet Plan", home_diet_path, class: "nav-item nav-link" %>
+                </li>
+                <li class="nav-item <%= 'active' if current_page?(home_workout_path) %>">
+                    <%= link_to "Workout", home_workout_path, class: "nav-item nav-link" %>
+                </li>
+            </ul>
+        </div>
+    </nav>
     <%= yield %>
   </body>
+
 </html>
